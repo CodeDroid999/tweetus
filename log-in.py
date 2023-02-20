@@ -3,7 +3,7 @@ import requests
 def login_to_twitter(username, password):
     session = requests.Session()
     login_url = "https://twitter.com/login"
-
+    # Get the authenticity_token from the login page
     # Get the authenticity_token from the login page
     resp = session.get(login_url)
     authenticity_token = resp.text.split('authenticity_token" value="')[1].split('"')[0]
